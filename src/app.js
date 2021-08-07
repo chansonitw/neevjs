@@ -22,4 +22,8 @@ function max(ar) {
     return Math.max(...ar)
 }
 
-module.exports = {heads, tails, map, filter, reduce, max}
+function min(ar) {
+    return Math.min(...ar)
+}
+
+module.exports = {heads, tails, map, filter, reduce, max, min}

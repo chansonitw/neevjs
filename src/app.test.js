@@ -74,6 +74,7 @@ test('return max of [1,2,3,4] as 4', () => {
     expect(app.max([1, 2, 3, 4])).toBe(4)
 })
 
-
-
+test('return min of [1,2,3,4] as 1', () => {
+    expect(app.min([1, 2, 3, 4])).toBe(1)
+})
 
