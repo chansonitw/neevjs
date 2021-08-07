@@ -18,5 +18,8 @@ function reduce(arr, fn, seed) {
     return (seed === undefined) ? (arr.length === 0) ? undefined : arr.reduce(fn) : arr.reduce(fn, seed)
 }
 
+function max(ar) {
+    return Math.max(...ar)
+}
 
-module.exports = {heads, tails, map, filter, reduce}
+module.exports = {heads, tails, map, filter, reduce, max}

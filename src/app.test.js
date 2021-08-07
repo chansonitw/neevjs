@@ -70,6 +70,9 @@ test('return reduce of [a,b,c] as zabc when seed for reduce is z', () => {
     expect(app.reduce(['a', 'b', 'c'], (x, y) => (x + y), 'z')).toBe("zabc");
 });
 
+test('return max of [1,2,3,4] as 4', () => {
+    expect(app.max([1, 2, 3, 4])).toBe(4)
+})
 
 
 
