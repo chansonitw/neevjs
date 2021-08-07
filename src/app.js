@@ -6,5 +6,9 @@ function tails(arr) {
     return arr.length === 0 ? undefined : arr.slice(1)
 }
 
+function map(arr, fn) {
+    return arr.map(e => fn(e))
+}
 
-module.exports = {heads,tails}
+
+module.exports = {heads,tails, map}
