@@ -30,10 +30,30 @@ test('return map of [1,2,3] as [1,8,27] when map function is cube', () => {
     expect(app.map([1, 2, 3], cube)).toStrictEqual([1, 8, 27]);
 });
 
-
 test('return map of [{x : 10}] as [11] when map function is custom object function', () => {
     expect(app.map([{x: 10}], (e) => e.x + 1)).toStrictEqual([11]);
 });
+
+test('return filter of []  as []', () => {
+    expect(app.filter([])).toStrictEqual([]);
+});
+
+test('return filter of [1,2,3]  as [1,2,3] when filter function return true', () => {
+    expect(app.filter([1, 2, 3], (e) => true)).toStrictEqual([1, 2, 3]);
+});
+
+test('return filter of [1,2,3]  as [] when filter function return false', () => {
+    expect(app.filter([1, 2, 3], (e) => true)).toStrictEqual([1, 2, 3]);
+});
+
+test('return filter of [1,2,3]  as [2,3] when filter function says greater than 1', () => {
+    expect(app.filter([1, 2, 3], (e) => e > 1)).toStrictEqual([2,3]);
+});
+
+test('return filter of [a,B,c,D]  as [B,D] when filter function filter upper case', () => {
+    expect(app.filter(['a', 'B', 'c', 'D'], (e) => e === e.toUpperCase())).toStrictEqual(['B', 'D']);
+});
+
 
 
 
