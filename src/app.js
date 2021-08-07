@@ -14,4 +14,9 @@ function filter(arr, fn) {
     return arr.filter(e => fn(e))
 }
 
-module.exports = {heads, tails, map, filter}
+function reduce(arr, fn, seed) {
+    return (seed === undefined) ? (arr.length === 0) ? undefined : arr.reduce(fn) : arr.reduce(fn, seed)
+}
+
+
+module.exports = {heads, tails, map, filter, reduce}

@@ -54,6 +54,22 @@ test('return filter of [a,B,c,D]  as [B,D] when filter function filter upper cas
     expect(app.filter(['a', 'B', 'c', 'D'], (e) => e === e.toUpperCase())).toStrictEqual(['B', 'D']);
 });
 
+test('return reduce of [] as undefined', () => {
+    expect(app.reduce([], (x, y) => (x + y))).toBe(undefined);
+});
+
+test('return reduce of [] as 10 when seed for reduce is 10', () => {
+    expect(app.reduce([], (x, y) => (x + y), 10)).toBe(10);
+});
+
+test('return reduce of [a,b,c] as abc', () => {
+    expect(app.reduce(['a', 'b', 'c'], (x, y) => (x + y))).toBe("abc");
+});
+
+test('return reduce of [a,b,c] as zabc when seed for reduce is z', () => {
+    expect(app.reduce(['a', 'b', 'c'], (x, y) => (x + y), 'z')).toBe("zabc");
+});
+
 
 
 
